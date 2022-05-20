@@ -30,7 +30,3 @@ rule download:
         "raw_data/"+generate_raw_time()+".json"
     script:
         "scripts/download_to_json.py"
-
-#rule download:
-#    input:
-#        "raw_data/"+generate_raw_time()+".json"

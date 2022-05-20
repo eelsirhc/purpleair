@@ -1,4 +1,4 @@
 #!/bin/bash
 source ~/.bash_profile
 cd /home/lee/1-Projects/purpleair
-snakemake -j1 merge
+make merge # snakemake -j1 merge
