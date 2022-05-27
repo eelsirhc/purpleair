@@ -1,6 +1,5 @@
 {
   "key": "KEYID_GOES_HERE"
-  "station_id": 96227,
   "fields": "icon,name,location_type,latitude,longitude,altitude,last_seen,channel_state,channel_flags,confidence,pm1.0,pm2.5,pm2.5_10minute,pm2.5_30minute,pm2.5_60minute,pm2.5_6hour,pm2.5_24hour,pm2.5_1week,pm10.0,0.3_um_count,0.5_um_count,1.0_um_count,2.5_um_count,5.0_um_count,10.0_um_count,humidity,temperature,pressure,voc,ozone1,analog_input",
   "api_url" : "https://api.purpleair.com/v1/sensors/"
 

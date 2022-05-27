@@ -3,9 +3,9 @@ import requests
 from pathlib import Path
 
 
-def get(config, output_filename):
+def get(config, station_id, output_filename):
 
-    url = "{api_url}?fields={fields}&show_only={station_id}".format(**config)
+    url = "{api_url}?fields={fields}&show_only={station_id}".format(station_id=station_id, **config)
     headers = {'X-API-Key': config["key"]}
     response = requests.get(url, headers=headers)
     if response.ok:
@@ -14,18 +14,15 @@ def get(config, output_filename):
         json.dump(rj,open(output_filename,'w'))
 
 if __name__ == "__main__":
-    try:
-        output_filename = snakemake.output[0]
-    except NameError:
-        import sys
-        output_filename = sys.argv[1] # first argument
-        output_filename = Path(output_filename)
-
+    import sys
+    station_id = sys.argv[1] # first argument
+    output_filename = sys.argv[2] # second argument
+    output_filename = Path(output_filename)
+    
     config = json.load(open(".readkey",'r'))
     #config is a dictionary containing
     # key -> the key id
-    # station_id -> the station id
     # fields -> fields to download
     # api_url -> the url to access
     
-    get(config, output_filename)
+    get(config, station_id, output_filename)

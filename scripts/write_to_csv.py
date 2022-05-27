@@ -18,12 +18,8 @@ def process_json_files(input_files, output):
 
 
 if __name__ == "__main__":
-   try:
-        input_files = snakemake.input
-        output_filename = snakemake.output[0]
-   except NameError:
-        import sys
-        input_files = sys.argv[1:-1]
-        output_filename = sys.argv[-1]
-        output_filename = Path(output_filename)
+   import sys
+   input_files = sys.argv[1:-1]
+   output_filename = sys.argv[-1]
+   output_filename = Path(output_filename)
    process_json_files(input_files, output_filename)
